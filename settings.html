@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - Restaurant Billing System</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>⚙️ Settings</h1>
+        </header>
+        
+        <nav class="nav-menu">
+            <a href="index.html" class="nav-item">🏠 Home</a>
+            <a href="items.html" class="nav-item">📦 Items</a>
+            <a href="billing.html" class="nav-item">💵 Billing</a>
+            <a href="sales.html" class="nav-item">📊 Sales</a>
+            <a href="reports.html" class="nav-item">📄 Reports</a>
+            <a href="settings.html" class="nav-item active">⚙️ Settings</a>
+        </nav>
+
+        <main class="main-content">
+            <div class="form-section">
+                <h2>Restaurant Settings</h2>
+                <form id="settings-form" class="form">
+                    <div class="form-group">
+                        <label for="restaurant-name">Restaurant Name *</label>
+                        <input type="text" id="restaurant-name" required placeholder="Enter restaurant name">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="restaurant-address">Restaurant Address</label>
+                        <textarea id="restaurant-address" rows="3" placeholder="Enter restaurant address"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="upi-id">UPI ID *</label>
+                        <input type="text" id="upi-id" required placeholder="Enter UPI ID (e.g., yourname@paytm)">
+                        <small>This will be used to generate payment QR codes</small>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary btn-large">💾 Save Settings</button>
+                    </div>
+                </form>
+            </div>
+        </main>
+    </div>
+    
+    <script src="js/db.js"></script>
+    <script src="js/settings.js"></script>
+</body>
+</html>
+

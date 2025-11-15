@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales History - Restaurant Billing System</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>📊 Sales History</h1>
+        </header>
+        
+        <nav class="nav-menu">
+            <a href="index.html" class="nav-item">🏠 Home</a>
+            <a href="items.html" class="nav-item">📦 Items</a>
+            <a href="billing.html" class="nav-item">💵 Billing</a>
+            <a href="sales.html" class="nav-item active">📊 Sales</a>
+            <a href="reports.html" class="nav-item">📄 Reports</a>
+            <a href="settings.html" class="nav-item">⚙️ Settings</a>
+        </nav>
+
+        <main class="main-content">
+            <div class="filter-section">
+                <h2>Filter Sales</h2>
+                <div class="filter-form">
+                    <div class="form-group">
+                        <label for="filter-date">Filter by Date:</label>
+                        <input type="date" id="filter-date">
+                        <button id="apply-filter" class="btn btn-primary">🔍 Filter</button>
+                        <button id="clear-filter" class="btn btn-secondary">❌ Clear</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sales-section">
+                <h2>All Sales</h2>
+                <div id="sales-list" class="sales-list">
+                    <!-- Sales will be loaded here -->
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+    <script src="js/db.js"></script>
+    <script src="js/sales.js"></script>
+</body>
+</html>
+

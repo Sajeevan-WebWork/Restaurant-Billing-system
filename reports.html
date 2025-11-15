@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports - Restaurant Billing System</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>📄 Sales Reports</h1>
+        </header>
+        
+        <nav class="nav-menu">
+            <a href="index.html" class="nav-item">🏠 Home</a>
+            <a href="items.html" class="nav-item">📦 Items</a>
+            <a href="billing.html" class="nav-item">💵 Billing</a>
+            <a href="sales.html" class="nav-item">📊 Sales</a>
+            <a href="reports.html" class="nav-item active">📄 Reports</a>
+            <a href="settings.html" class="nav-item">⚙️ Settings</a>
+        </nav>
+
+        <main class="main-content">
+            <div class="report-section">
+                <h2>Generate Sales Report</h2>
+                <form id="report-form" class="form">
+                    <div class="form-group">
+                        <label for="report-from-date">From Date *</label>
+                        <input type="date" id="report-from-date" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="report-to-date">To Date *</label>
+                        <input type="date" id="report-to-date" required>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary btn-large">📥 Download PDF Report</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="report-preview-section">
+                <h2>Report Preview</h2>
+                <div id="report-preview" class="report-preview">
+                    <p>Select date range and click "Download PDF Report" to generate report</p>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="js/db.js"></script>
+    <script src="js/reports.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Billing - Restaurant Billing System</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>💵 Create Bill</h1>
+        </header>
+        
+        <nav class="nav-menu">
+            <a href="index.html" class="nav-item">🏠 Home</a>
+            <a href="items.html" class="nav-item">📦 Items</a>
+            <a href="billing.html" class="nav-item active">💵 Billing</a>
+            <a href="sales.html" class="nav-item">📊 Sales</a>
+            <a href="reports.html" class="nav-item">📄 Reports</a>
+            <a href="settings.html" class="nav-item">⚙️ Settings</a>
+        </nav>
+
+        <main class="main-content billing-main">
+            <div class="billing-wrapper">
+                <div class="items-section-billing">
+                    <h2>Select Items</h2>
+                    <div id="items-grid-billing" class="items-grid">
+                        <!-- Items will be loaded here -->
+                    </div>
+                </div>
+
+                <div class="cart-section">
+                    <h2>Cart</h2>
+                    <div id="cart-items" class="cart-items">
+                        <p class="empty-cart">No items in cart</p>
+                    </div>
+                    
+                    <div class="cart-total">
+                        <div class="total-row">
+                            <span class="total-label">Total:</span>
+                            <span class="total-amount" id="cart-total">₹ 0.00</span>
+                        </div>
+                    </div>
+
+                    <div class="cart-actions">
+                        <button id="clear-cart" class="btn btn-secondary btn-large">🗑️ Clear Cart</button>
+                        <button id="generate-bill" class="btn btn-success btn-large">💰 Generate Bill</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bill Modal -->
+            <div id="bill-modal" class="modal" style="display: none;">
+                <div class="modal-content bill-content">
+                    <div class="bill-header">
+                        <h2 id="restaurant-name">Restaurant Name</h2>
+                        <p id="restaurant-address"></p>
+                        <p>Bill No: <span id="bill-number"></span></p>
+                        <p>Date: <span id="bill-date"></span></p>
+                    </div>
+                    
+                    <div id="bill-items" class="bill-items">
+                        <!-- Bill items will be displayed here -->
+                    </div>
+                    
+                    <div class="bill-total">
+                        <div class="total-row">
+                            <span class="total-label">Total Amount:</span>
+                            <span class="total-amount" id="bill-total-amount">₹ 0.00</span>
+                        </div>
+                    </div>
+
+                    <div class="upi-section">
+                        <h3>Pay via UPI</h3>
+                        <div id="upi-qr-code" class="qr-code-container"></div>
+                        <p class="upi-id" id="display-upi-id"></p>
+                    </div>
+
+                    <div class="bill-actions">
+                        <button id="print-bill" class="btn btn-primary btn-large">🖨️ Print Bill</button>
+                        <button id="save-bill" class="btn btn-success btn-large">💾 Save Bill</button>
+                        <button id="close-bill" class="btn btn-secondary btn-large">❌ Close</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+    <script src="js/db.js"></script>
+    <script src="js/billing.js"></script>
+</body>
+</html>
+

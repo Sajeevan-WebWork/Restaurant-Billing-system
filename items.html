@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Items - Restaurant Billing System</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>📦 Manage Items</h1>
+        </header>
+        
+        <nav class="nav-menu">
+            <a href="index.html" class="nav-item">🏠 Home</a>
+            <a href="items.html" class="nav-item active">📦 Items</a>
+            <a href="billing.html" class="nav-item">💵 Billing</a>
+            <a href="sales.html" class="nav-item">📊 Sales</a>
+            <a href="reports.html" class="nav-item">📄 Reports</a>
+            <a href="settings.html" class="nav-item">⚙️ Settings</a>
+        </nav>
+
+        <main class="main-content">
+            <div class="form-section">
+                <h2 id="form-title">Add New Item</h2>
+                <form id="item-form" class="form">
+                    <input type="hidden" id="item-id">
+                    
+                    <div class="form-group">
+                        <label for="item-name">Item Name *</label>
+                        <input type="text" id="item-name" required placeholder="Enter item name">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="item-price">Price (₹) *</label>
+                        <input type="number" id="item-price" required min="0" step="0.01" placeholder="Enter price">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="item-category">Category</label>
+                        <input type="text" id="item-category" placeholder="Enter category (optional)">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="item-image">Item Image</label>
+                        <p style="margin-bottom: 10px; color: #7f8c8d; font-size: 14px;">Choose an option:</p>
+                        
+                        <div style="margin-bottom: 15px;">
+                            <label for="item-image-url" style="font-weight: normal; font-size: 16px; display: block; margin-bottom: 10px;">📎 Paste Image URL:</label>
+                            <input type="url" id="item-image-url" class="form-group input" placeholder="https://example.com/image.jpg" style="width: 100%; padding: 15px; font-size: 18px; border: 2px solid #bdc3c7; border-radius: 8px; margin-bottom: 10px;">
+                            <button type="button" id="load-image-url" class="btn btn-secondary" style="padding: 12px 25px; font-size: 16px;">🖼️ Load Image from URL</button>
+                        </div>
+                        
+                        <div style="text-align: center; margin: 15px 0; color: #7f8c8d;">OR</div>
+                        
+                        <div style="margin-bottom: 15px;">
+                            <label for="item-image" style="font-weight: normal; font-size: 16px;">📁 Upload from Computer:</label>
+                            <input type="file" id="item-image" accept="image/*" style="margin-top: 5px;">
+                        </div>
+                        
+                        <div id="image-preview" class="image-preview"></div>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary btn-large">💾 Save Item</button>
+                        <button type="button" id="cancel-btn" class="btn btn-secondary btn-large" style="display: none;">❌ Cancel</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="items-section">
+                <h2>All Items</h2>
+                <div id="items-grid" class="items-grid">
+                    <!-- Items will be loaded here -->
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script src="js/db.js"></script>
+    <script src="js/items.js"></script>
+</body>
+</html>
+
